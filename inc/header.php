@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title>Shirts 4 Mike</title>
+	<title><?php echo $pageTitle; ?></title>
 	<link rel="stylesheet" href="css/style.css" type="text/css">
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald:400,700" type="text/css">
 	<link rel="shortcut icon" href="favicon.ico">
@@ -14,9 +14,9 @@
 			<h1 class="branding-title"><a href="./">B-Side Book Club</a></h1>
 
 			<ul class="nav">
-				<li class="shirts"><a href="#">Shirts</a></li>
-				<li class="contact"><a href="contact.php">Contact</a></li>
-				<li class="cart"><a href="#">Shopping Cart</a></li>
+				<li class="shirts <?php if($section == "shirts") {echo "on";}?>"><a href="merch.php">Shirts</a></li>
+				<li class="contact <?php if($section == "contact") {echo("on");}?>"><a href="contact.php">Contact</a></li>
+				<li class="cart<?php if($section == "cart") {echo("on");}?>"><a href="#">Shopping Cart</a></li>
 			</ul>
 
 		</div>
