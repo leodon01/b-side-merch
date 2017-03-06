@@ -5,7 +5,7 @@ include("inc/header.php"); ?>
 
 			<div class="wrapper">
 
-				<img class="hero" src="img/mike-the-frog.png" alt="Mike the Frog says:">
+				<img class="hero" src="img/bside-name.png" alt="Mike the Frog says:">
 				<div class="button">
 					<a href="#">
 						<h2>Hey, I&rsquo;m Mike!</h2>
@@ -20,7 +20,7 @@ include("inc/header.php"); ?>
 
 			<div class="wrapper">
 
-				<h2>Mike&rsquo;s Latest Shirts</h2>
+				<h2>OUR LATEST SHIRTS</h2>
 
 				<ul class="products">
 					<li><a href="#">
