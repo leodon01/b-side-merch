@@ -4,8 +4,6 @@ include("inc/header.php"); ?>
 		<div class="section banner">
 
 			<div class="wrapper">
-
-				<img class="hero" src="img/bside-name.png" alt="Mike the Frog says:">
 				<div class="button">
 					<a href="#">
 						<h2>Hey, I&rsquo;m Mike!</h2>

@@ -536,6 +536,7 @@ body {font-family: 'Oswald', sans-serif; background:#f0eeed; color: #676767;}
     background-position: 16px -216px;
     margin: 0;
 }
+#logo-title {position: relative; top: 31px; left: -64px;}
 .header .nav li.cart a:hover {background-position: 16px -321px;}
 #content {min-height: 400px; background: white;}
 .section.banner {height: 290px; background: #3d3d3d url('../img/banner.jpeg') center center no-repeat;}
@@ -611,7 +612,7 @@ body {font-family: 'Oswald', sans-serif; background:#f0eeed; color: #676767;}
     line-height: 1.6;
     font-weight: normal;
 }
-.section.shirts ul.products {margin: 0 0 -17px 0; padding: 0; width: 997px;}
+.section.shirts ul.products {margin: 0 0 -17px 0; padding: 0; width: 997px; display: inline-table;}
 .section.shirts ul.products li {
     display: inline-block;
     list-style: none;

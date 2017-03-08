@@ -11,7 +11,10 @@
 
 		<div class="wrapper">
 
-			<h1 class="branding-title"><a href="./">B-Side Book Club</a></h1>
+			<h1 class="branding-title"><a href="./">B-Side Book Club
+				<img id="logo-title" class="hero" src="img/bside-name.png" style="position: relative; top: 15px; left: 58px;"></a></h1>
+
+
 
 			<ul class="nav">
 				<li class="shirts <?php if($section == "shirts") {echo "on";}?>"><a href="merch.php">Shirts</a></li>
