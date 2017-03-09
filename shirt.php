@@ -29,7 +29,7 @@ include("inc/header.php"); ?>
         </div>
         <div class="shirt-details">
           <h1>
-            <span class="price" style="color: #9d9f4e; padding-right: 10px; font-size: 34px;">$<?php echo $product["price"];?></span> <?php echo $product["name"];?>
+            <span class="price">$<?php echo $product["price"];?></span> <?php echo $product["name"];?>
           </h1>
           <p class="note-designer">*Logo design by Mathew Wordell</p>
           <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">

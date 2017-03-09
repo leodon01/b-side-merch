@@ -1,28 +1,23 @@
-
 <?php
 
-$flavors = array("blackberry", "blueberry", "peach", "bacon", "yumm", "the best flavor ever");
-
-
-function mimic($array) {
-
-	$count = 0;
-
-	foreach ($array as $element) {
-		$count = $count + 1;
-	}
-};
-
-echo mimic($flavors);
-
- ?>
-
-
-<?php
 if($_SERVER["REQUEST_METHOD"] == "POST") {
-  $name = $_POST["name"];
-  $email = $_POST["email"];
-  $message = $_POST["message"];
+  $name = trim($_POST["name"]);
+  $email = trim($_POST["email"]);
+  $message = trim($_POST["message"]);
+
+
+
+if($name == "" OR $email == "" OR $message == "") {
+	echo "no info dummy";
+	exit;
+}
+foreach( $_POST as $value ){
+		if( stripos($value,'Content-Type:') !== FALSE ){
+				echo "There was a problem with the information you entered.";
+				exit;
+		}
+}
+
   $email_body = "";
   $email_body = $email_body . "Name: " . $name . "\n";
   $email_body = $email_body .  "Email: " . $email . "\n";
@@ -31,23 +26,21 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
   header("Location: contact.php?status=thanks");
   exit;
 }
-  //ToDo: send email
-
-
 ?>
 
 <?php
 $pageTitle = "Contact";
 $section = "contact";
-include("inc/header.php"); ?>
+include("inc/header.php");
+?>
 
     <div class="section page">
       <div class="wrapper">
         <h1>Contact</h1>
 
         <?php if(isset($_GET["status"]) AND $_GET["status"] == "thanks") { ?>
-         "<p>Thanks for the Email! We'll get back to you soon.</p>";
-        <? } else {?>
+         <p>Thanks for the Email! We'll get back to you soon.</p>
+        <?php } else {?>
         <p>Let us know what you think!</p>
         <form method="post" action="contact.php">
           <table>
@@ -57,7 +50,7 @@ include("inc/header.php"); ?>
                 <label for="name">Name</label>
               </th>
               <td>
-                <input name="name" type="text" id="name" >
+                <input name="name" type="text" id="name">
               </td>
             </tr>
 
@@ -66,7 +59,7 @@ include("inc/header.php"); ?>
                 <label for="email">E-mail</label>
               </th>
               <td>
-                <input name="email" type="text" id="email" value="email" >
+                <input name="email" type="text" id="email">
               </td>
             </tr>
 

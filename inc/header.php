@@ -12,7 +12,7 @@
 		<div class="wrapper">
 
 			<h1 class="branding-title"><a href="./">B-Side Book Club
-				<img id="logo-title" class="hero" src="img/bside-name.png" style="position: relative; top: 15px; left: 58px;"></a></h1>
+				<img id="logo-title" class="hero" src="img/bside-name.png"></a></h1>
 
 
 

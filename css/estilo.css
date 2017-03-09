@@ -536,12 +536,11 @@ body {font-family: 'Oswald', sans-serif; background:#f0eeed; color: #676767;}
     background-position: 16px -216px;
     margin: 0;
 }
-#logo-title {position: relative; top: 31px; left: -64px;}
+img #logo-title {position: relative; top: 16px; left: 58px;}
 .header .nav li.cart a:hover {background-position: 16px -321px;}
 #content {min-height: 400px; background: white;}
 .section.banner {height: 290px; background: #3d3d3d url('../img/banner.jpeg') center center no-repeat;}
 .section.banner .wrapper {position: relative;}
-.section.banner .hero {position: absolute; top: -81px; left: 70px; z-index: 999;}
 .section.banner .button {
     display: none;
     position: absolute;
@@ -602,7 +601,7 @@ body {font-family: 'Oswald', sans-serif; background:#f0eeed; color: #676767;}
     text-align: left;
 }
 .section.page p {width: 375px; margin-left: auto; margin-right: auto; }
-.section.page .shirt-details h1 .price {color: #9d9f4e; padding-right: 10px; font-size: 34px;}
+.section.page .shirt-details h1 span.price {color: #9d9f4e; padding-right: 10px; font-size: 34px;}
 .section.shirts {padding-bottom: 42px; background: #fff;}
 .section.shirts h2 {
     font-size: 24px;
