@@ -9,14 +9,10 @@ include("inc/header.php"); ?>
   <div class="wrapper">
     <h1>Full Catalog</h1>
     <ul class="products" style="display: inline-table">
-      <?php foreach($products as $product_id => $product) { ?>
-        <li>
-          <?php echo '<a href="shirt.php?id=' . $product_id . '">'; ?>  
-            <img src="<?php echo $product["img"];?>" alt="<?php echo $product["name"]; ?>">
-            <p>View Details</p>
-          </a>
-        </li>
-        <?php } ?>
+      <?php foreach($products as $product_id => $product) {
+           echo get_list_view_html($product_id, $product);
+            }
+         ?>
     </ul>
   </div>
 </div>

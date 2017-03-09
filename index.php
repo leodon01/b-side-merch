@@ -1,3 +1,6 @@
+
+
+
 <?php
 $pageTitle = "Home";
 include("inc/header.php"); ?>
@@ -20,27 +23,25 @@ include("inc/header.php"); ?>
 
 				<h2>OUR LATEST SHIRTS</h2>
 
+
+			<?php include("inc/products.php") ?>
 				<ul class="products">
-					<li><a href="#">
-							<img src="img/shirts/shirt-108.jpg">
-							<p>View Details</p>
-						</a>
-					</li><li>
-						<a href="#">
-							<img src="img/shirts/shirt-107.jpg">
-							<p>View Details</p>
-						</a>
-					</li><li>
-						<a href="#">
-							<img src="img/shirts/shirt-106.jpg">
-							<p>View Details</p>
-						</a>
-					</li><li>
-						<a href="#">
-							<img src="img/shirts/shirt-105.jpg">
-							<p>View Details</p>
-						</a>
-					</li>
+
+
+					<?php
+
+								$total_products = count($products);
+								$position = 0;
+
+					?>
+					<?php foreach($products as $product_id => $product) {
+							$position = $position + 1;
+							if ($total_products - $position < 4) {
+								echo get_list_view_html($product_id, $product);
+							}
+		            }
+		         ?>
+
 				</ul>
 
 			</div>

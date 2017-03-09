@@ -1,3 +1,23 @@
+
+<?php
+
+$flavors = array("blackberry", "blueberry", "peach", "bacon", "yumm", "the best flavor ever");
+
+
+function mimic($array) {
+
+	$count = 0;
+
+	foreach ($array as $element) {
+		$count = $count + 1;
+	}
+};
+
+echo mimic($flavors);
+
+ ?>
+
+
 <?php
 if($_SERVER["REQUEST_METHOD"] == "POST") {
   $name = $_POST["name"];
