@@ -5,23 +5,50 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
   $email = trim($_POST["email"]);
   $message = trim($_POST["message"]);
 
+    if($name == "" OR $email == "" OR $message == "") {
+    	echo "Please fill out all fields, thanks duuuude!";
+    	exit;
+    }
 
+    //Email header injection prevention
+    foreach( $_POST as $value ){
+    		if( stripos($value,'Content-Type:') !== FALSE ){
+    				echo "There was a problem with the information you entered.";
+    				exit;
+    		}
+    }
 
-if($name == "" OR $email == "" OR $message == "") {
-	echo "no info dummy";
-	exit;
-}
-foreach( $_POST as $value ){
-		if( stripos($value,'Content-Type:') !== FALSE ){
-				echo "There was a problem with the information you entered.";
-				exit;
-		}
-}
+    if ($_POST["address" !== ""]) {
+      exit;
+    }
+
+//PHP Mailer
+  require_once("inc/phpMailer/class.phpmailer.php");
+  $mail = new phpMailer();
+
+//not working...
+  if($mail->ValidateAddress($email)){
+    echo "Invalid E-Mail Adress...";
+    exit;
+  }
 
   $email_body = "";
-  $email_body = $email_body . "Name: " . $name . "\n";
-  $email_body = $email_body .  "Email: " . $email . "\n";
+  $email_body = $email_body . "Name: " . $name . "<br>";
+  $email_body = $email_body .  "Email: " . $email . "<br>";
   $email_body = $email_body .  "Message: " . $message;
+
+
+  $mail->SetFrom($email, $name);
+  $address = "bsidemerch@gmail.com";
+  $mail->AddAddress($address, "B-Side Merchandise");
+  $mail->Subject = "B-Side Merchandise Contact Form | " . $name;
+  $mail->MsgHTML($email_body);
+
+  if (!$mail->Send()) {
+    echo "Mailer Error: " . $mail->ErrorInfo;
+    exit;
+  };
+
 
   header("Location: contact.php?status=thanks");
   exit;
@@ -71,6 +98,17 @@ include("inc/header.php");
                 <textarea name="message" id="message" rows="4" cols="80" placeholder="Leave us a message!"></textarea>
               </td>
             </tr>
+
+            <tr style="display: none;">
+              <th>
+                <label for="address">Address</label>
+              </th>
+              <td>
+                <input name="address" type="address" id="address">
+                <p>Humans: leave this blank.</p>
+              </td>
+            </tr>
+
           </table>
           <input type="submit" name="" value="Send">
         </form>
