@@ -14,6 +14,12 @@ Skills Learned
 
 
 
+note:
 
+add space between size pull down and add to cart button on shirt page
 
-why website, gen data
+smooth out header logo
+
+change nav bar button sprite colors
+
+get rid of custom link water marks

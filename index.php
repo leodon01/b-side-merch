@@ -16,7 +16,7 @@ include("inc/header.php"); ?>
 			</div>
 
 		</div>
-
+		
 		<div class="section shirts latest">
 
 			<div class="wrapper">
